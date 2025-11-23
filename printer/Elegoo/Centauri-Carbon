@@ -1,6 +1,75 @@
 {
   "op3d_schema": "printer",
+  "op3d_schema_version": "0.1.0",
+
   "id": "Elegoo/Centauri-Carbon",
-  "build_volume": { "x": 256, "y": 256, "z": 256 },
-  "kinematics": "corexy"
+  "manufacturer": "Elegoo",
+  "model": "Centauri Carbon",
+  "variant": "Stock",
+
+  "build_volume": {
+    "x": 256,
+    "y": 256,
+    "z": 256,
+    "shape": "rectangular",
+    "origin": "front_left"
+  },
+
+  "kinematics": "corexy",
+
+  "axes": {
+    "x": { "max_speed": 500, "max_accel": 10000 },
+    "y": { "max_speed": 500, "max_accel": 10000 },
+    "z": { "max_speed": 30, "max_accel": 500 }
+  },
+
+  "extruders": [
+    {
+      "id": "tool0",
+      "nozzle_diameter": 0.4,
+      "max_temp": 320,
+      "min_temp": 170,
+      "retraction_supported": true
+    }
+  ],
+
+  "bed": {
+    "heated": true,
+    "max_temp": 110,
+    "surface_type": "PEI-textured"
+  },
+
+  "chamber": {
+    "heated": false,
+    "max_temp": 60,
+    "passive": true
+  },
+
+  "firmware": {
+    "flavor": "proprietary",
+    "identifier": "Elegoo-Centauri-Carbon-stock"
+  },
+
+  "network": {
+    "has_wifi": true,
+    "has_ethernet": false,
+    "supports_lan_api": false
+  },
+
+  "external_ids": {
+    "manufacturer_sku": "ECC-BASE-001"
+  },
+
+  "links": {
+    "datasheet": "https://example.com/elegoo-centauri-carbon",
+    "manufacturer": "https://www.elegoo.com/"
+  },
+
+  "tags": [
+    "enclosed",
+    "corexy",
+    "high_speed"
+  ],
+
+  "notes": "Base profile for stock Centauri Carbon. Use process + filament profiles on top of this."
 }
