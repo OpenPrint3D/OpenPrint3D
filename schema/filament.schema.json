@@ -1,0 +1,192 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://openprint3d.org/schema/filament.schema.json",
+  "title": "OpenPrint3D Filament Profile",
+  "description": "Schema for OpenPrint3D filament profiles (material, temps, environmental guidance).",
+  "type": "object",
+  "required": [
+    "op3d_schema",
+    "op3d_schema_version",
+    "id",
+    "brand",
+    "name",
+    "material",
+    "nozzle",
+    "bed"
+  ],
+  "properties": {
+    "op3d_schema": {
+      "type": "string",
+      "const": "filament",
+      "description": "Discriminator for this schema type."
+    },
+    "op3d_schema_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "description": "Semantic version of the filament schema, e.g. 0.1.0."
+    },
+    "id": {
+      "type": "string",
+      "description": "Stable identifier, e.g. 'Polymaker/PolyLite-PLA'."
+    },
+
+    "brand": { "type": "string" },
+    "name": { "type": "string" },
+    "material": {
+      "type": "string",
+      "description": "e.g. 'PLA', 'PETG', 'ABS', 'ASA', 'PA-CF'."
+    },
+
+    "color": {
+      "type": "string",
+      "description": "Optional human-readable color name."
+    },
+
+    "diameter": {
+      "type": "number",
+      "description": "Nominal filament diameter in mm, e.g. 1.75."
+    },
+
+    "density": {
+      "type": "number",
+      "description": "Material density in g/cm³ (optional)."
+    },
+
+    "nozzle": {
+      "type": "object",
+      "required": ["min", "max"],
+      "properties": {
+        "min": {
+          "type": "number",
+          "description": "Minimum recommended nozzle temperature (°C)."
+        },
+        "max": {
+          "type": "number",
+          "description": "Maximum recommended nozzle temperature (°C)."
+        },
+        "recommended": {
+          "type": "number",
+          "description": "Typical or starting-point nozzle temperature (°C)."
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "bed": {
+      "type": "object",
+      "required": ["min", "max"],
+      "properties": {
+        "min": {
+          "type": "number",
+          "description": "Minimum recommended bed temperature (°C)."
+        },
+        "max": {
+          "type": "number",
+          "description": "Maximum recommended bed temperature (°C)."
+        },
+        "recommended": {
+          "type": "number",
+          "description": "Typical or starting-point bed temperature (°C)."
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "fan": {
+      "type": "object",
+      "properties": {
+        "min": {
+          "type": "number",
+          "description": "Minimum part cooling as a percent (0–100)."
+        },
+        "max": {
+          "type": "number",
+          "description": "Maximum part cooling as a percent (0–100)."
+        },
+        "recommended": {
+          "type": "number",
+          "description": "Typical part cooling as a percent (0–100)."
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "drying": {
+      "type": "object",
+      "properties": {
+        "temperature": {
+          "type": "number",
+          "description": "Suggested drying temperature (°C)."
+        },
+        "duration_hours": {
+          "type": "number",
+          "description": "Suggested drying time in hours."
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "environment": {
+      "type": "object",
+      "properties": {
+        "sensitive_to_moisture": {
+          "type": "boolean",
+          "description": "True if the filament is notably moisture-sensitive."
+        },
+        "enclosure_recommended": {
+          "type": "boolean",
+          "description": "True if an enclosure is strongly recommended."
+        },
+        "max_ambient_temp": {
+          "type": "number",
+          "description": "Maximum recommended ambient temperature (°C) around the print."
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "external_ids": {
+      "type": "object",
+      "description": "Arbitrary external identifiers (OpenPrintTag, GTIN, SKUs, etc.).",
+      "patternProperties": {
+        "^[a-zA-Z0-9_.-]+$": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+
+    "links": {
+      "type": "object",
+      "description": "Useful URLs (datasheet, product page, manufacturer, etc.).",
+      "patternProperties": {
+        "^[a-zA-Z0-9_.-]+$": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+
+    "notes": {
+      "type": "string"
+    },
+
+    "x_cura": { "type": "object" },
+    "x_prusaslicer": { "type": "object" },
+    "x_orca": { "type": "object" },
+    "x_bambu": { "type": "object" }
+  },
+
+  "patternProperties": {
+    "^x_[a-zA-Z0-9_.-]+$": {
+      "type": "object",
+      "description": "Vendor- or slicer-specific extensions."
+    }
+  },
+
+  "additionalProperties": false
+}
