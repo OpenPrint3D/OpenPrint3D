@@ -1,40 +1,91 @@
 {
-  "op3d_schema": "filament",
+  "op3d_schema": "process",
   "op3d_schema_version": "0.1.0",
+  "id": "Standard/0.20mm-quality",
 
-  "id": "Polymaker/PolyLite-PLA",
-  "brand": "Polymaker",
-  "name": "PolyLite PLA",
-  "material": "PLA",
+  "name": "0.20mm Quality",
+  "intent": "quality",
 
-  "nozzle": {
-    "min": 195,
-    "max": 225,
-    "recommended": 205
+  "layer_height": {
+    "min": 0.16,
+    "max": 0.24,
+    "default": 0.20
   },
 
-  "bed": {
-    "min": 50,
-    "max": 60,
-    "recommended": 55
+  "wall_settings": {
+    "wall_count": 3,
+    "top_layers": 5,
+    "bottom_layers": 5
   },
 
-  "fan": {
-    "min": 50,
-    "max": 100,
-    "recommended": 100
+  "infill": {
+    "density_default": 20,
+    "density_range": {
+      "min": 10,
+      "max": 60
+    },
+    "recommended_patterns": [
+      "gyroid",
+      "grid"
+    ]
+  },
+
+  "speed": {
+    "outer_wall": 120,
+    "inner_wall": 160,
+    "infill": 200,
+    "top_bottom": 120,
+    "travel": 250
+  },
+
+  "accel": {
+    "default": 8000,
+    "outer_wall": 5000,
+    "infill": 10000
+  },
+
+  "retraction": {
+    "distance": 0.8,
+    "speed": 35
+  },
+
+  "cooling": {
+    "fan_default": 100,
+    "fan_min_layer_time": 6
+  },
+
+  "supports": {
+    "enabled_default": false,
+    "overhang_threshold": 50
+  },
+
+  "adhesion": {
+    "default_type": "brim",
+    "brim_width": 4
+  },
+
+  "quality_bias": {
+    "priority": "balanced"
   },
 
   "external_ids": {
-    "open_print_tag": "opt:polymaker:polylite-pla:001",
-    "gtin": "0693892100000",
-    "manufacturer_sku": "PM70101"
+    "preset_source": "SE3D-Centauri-PLA-0.20"
   },
 
   "links": {
-    "datasheet": "https://example.com/polylite-pla",
-    "manufacturer": "https://polymaker.com/"
+    "docs": "https://example.com/openprint3d/process/0.20mm-quality"
   },
 
-  "notes": "Baseline PolyLite PLA profile. Works in enclosed printers at moderate speeds with full cooling."
+  "tags": [
+    "general_use",
+    "corexy",
+    "enclosed"
+  ],
+
+  "notes": "Baseline process profile for high-speed-capable enclosed printers using PLA-like materials. Tune retraction and accel per printer/filament combo.",
+
+  "x_cura": {},
+  "x_prusaslicer": {},
+  "x_orca": {},
+  "x_bambu": {}
 }
