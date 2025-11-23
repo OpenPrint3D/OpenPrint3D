@@ -1,0 +1,77 @@
+{
+  "op3d_schema": "process",
+  "op3d_schema_version": "0.1.0",
+  "id": "Category/ProfileName",
+
+  "name": "ProfileName",
+  "intent": "standard",
+
+  "layer_height": {
+    "min": 0.0,
+    "max": 0.0,
+    "default": 0.0
+  },
+
+  "wall_settings": {
+    "wall_count": 0,
+    "top_layers": 0,
+    "bottom_layers": 0
+  },
+
+  "infill": {
+    "density_default": 0,
+    "density_range": {
+      "min": 0,
+      "max": 0
+    },
+    "recommended_patterns": []
+  },
+
+  "speed": {
+    "outer_wall": 0,
+    "inner_wall": 0,
+    "infill": 0,
+    "top_bottom": 0,
+    "travel": 0
+  },
+
+  "accel": {
+    "default": 0,
+    "outer_wall": 0,
+    "infill": 0
+  },
+
+  "retraction": {
+    "distance": 0,
+    "speed": 0
+  },
+
+  "cooling": {
+    "fan_default": 0,
+    "fan_min_layer_time": 0
+  },
+
+  "supports": {
+    "enabled_default": false,
+    "overhang_threshold": 0
+  },
+
+  "adhesion": {
+    "default_type": "none",
+    "brim_width": 0
+  },
+
+  "quality_bias": {
+    "priority": "balanced"
+  },
+
+  "external_ids": {},
+  "links": {},
+  "tags": [],
+  "notes": "",
+
+  "x_cura": {},
+  "x_prusaslicer": {},
+  "x_orca": {},
+  "x_bambu": {}
+}
