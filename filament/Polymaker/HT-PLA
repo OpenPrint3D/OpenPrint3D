@@ -1,7 +1,0 @@
-{
-  "op3d_schema": "filament",
-  "id": "Polymaker/HT-PLA",
-  "material": "HT-PLA",
-  "nozzle": { "min": 210, "max": 230, "recommended": 220 },
-  "bed": { "min": 60, "max": 80, "recommended": 70 }
-}

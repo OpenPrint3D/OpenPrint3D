@@ -1,0 +1,40 @@
+{
+  "op3d_schema": "filament",
+  "op3d_schema_version": "0.1.0",
+
+  "id": "Polymaker/PolyLite-PLA",
+  "brand": "Polymaker",
+  "name": "PolyLite PLA",
+  "material": "PLA",
+
+  "nozzle": {
+    "min": 195,
+    "max": 225,
+    "recommended": 205
+  },
+
+  "bed": {
+    "min": 50,
+    "max": 60,
+    "recommended": 55
+  },
+
+  "fan": {
+    "min": 50,
+    "max": 100,
+    "recommended": 100
+  },
+
+  "external_ids": {
+    "open_print_tag": "opt:polymaker:polylite-pla:001",
+    "gtin": "0693892100000",
+    "manufacturer_sku": "PM70101"
+  },
+
+  "links": {
+    "datasheet": "https://example.com/polylite-pla",
+    "manufacturer": "https://polymaker.com/"
+  },
+
+  "notes": "Baseline PolyLite PLA profile. Works in enclosed printers at moderate speeds with full cooling."
+}
