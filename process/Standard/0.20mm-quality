@@ -1,0 +1,7 @@
+{
+  "op3d_schema": "process",
+  "id": "Standard/0.20mm-quality",
+  "intent": "quality",
+  "layer_height": { "default": 0.20 },
+  "speed": { "outer_wall": 120, "infill": 200 }
+}
