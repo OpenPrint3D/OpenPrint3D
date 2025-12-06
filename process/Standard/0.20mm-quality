@@ -3,6 +3,12 @@
   "op3d_schema_version": "0.1.0",
   "id": "Standard/0.20mm-quality",
 
+  "maintainer": {
+    "name": "OpenPrint3d",
+    "maintainer_type": "community",
+    "website": "https://github.com/OpenPrint3D/OpenPrint3D/"
+  },
+
   "name": "0.20mm Quality",
   "intent": "quality",
 

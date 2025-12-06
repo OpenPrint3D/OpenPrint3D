@@ -3,6 +3,12 @@
   "op3d_schema_version": "0.1.0",
   "id": "Elegoo/Centauri-Carbon",
 
+  "maintainer": {
+    "name": "OpenPrint3d",
+    "maintainer_type": "community",
+    "website": "https://github.com/OpenPrint3D/OpenPrint3D/"
+  },
+
   "manufacturer": "Elegoo",
   "model": "Centauri Carbon",
   "variant": "Stock",
