@@ -3,6 +3,13 @@
   "op3d_schema_version": "0.1.0",
   "id": "Category/ProfileName",
 
+  "maintainer": {
+    "name": "Maintainer Name",
+    "maintainer_type": "community",
+    "website": "https://github.com/OpenPrint3D/OpenPrint3D/",
+    "contact": "Contact Information"
+  },
+
   "name": "ProfileName",
   "intent": "standard",
 

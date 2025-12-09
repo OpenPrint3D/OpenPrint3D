@@ -8,6 +8,7 @@
     "op3d_schema",
     "op3d_schema_version",
     "id",
+    "maintainer",
     "manufacturer",
     "model",
     "build_volume",
@@ -30,6 +31,32 @@
     "id": {
       "type": "string",
       "description": "Stable identifier, e.g. 'Elegoo/Centauri-Carbon'."
+    },
+
+    "maintainer": {
+      "type": "object",
+      "required": ["name", "maintainer_type"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the company or individual that maintains this profile."
+        },
+        "maintainer_type": {
+          "type": "string",
+          "enum": ["company", "community", "personal"],
+          "description": "The type of the maintainer."
+        },
+        "website": {
+          "type": "string",
+          "format": "uri",
+          "description": "Website of the printer profile. (optional)"
+        },
+        "contact": {      
+          "type": "string",
+          "description": "Contact information of the maintainer. (optional)"
+        }
+      },
+      "additionalProperties": false
     },
 
     "manufacturer": {

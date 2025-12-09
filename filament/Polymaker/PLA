@@ -3,6 +3,12 @@
   "op3d_schema_version": "0.1.0",
   "id": "Polymaker/PolyLite-PLA",
 
+  "maintainer": {
+    "name": "OpenPrint3d",
+    "maintainer_type": "community",
+    "website": "https://github.com/OpenPrint3D/OpenPrint3D/"
+  },
+
   "brand": "Polymaker",
   "name": "PolyLite PLA",
   "material": "PLA",
