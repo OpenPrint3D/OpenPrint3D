@@ -48,8 +48,7 @@ Any contributor may propose changes to:
 - Other core or structural elements  
 
 Proposals must be submitted as:  
-- A GitHub **Pull Request**, or  
-- A **Discussion** (if your GitHub settings permit), explicitly labeled for governance proposals  
+- Proposals may begin as GitHub Issues for discussion. Once a proposal is sufficiently defined, it should be submitted as a Pull Request for review and acceptance under the lazy consensus model.
 
 The proposal must describe:  
 - Motivation / problem statement  
