@@ -10,7 +10,7 @@ The goal is a lightweight, community-driven framework that reduces fragmentation
 
 OpenPrint3D is currently an early-stage draft (schema v0.1). Feedback, discussion, and contributions are welcome.
 
-Community & Discord
+#Community & Discord
 We invite you to join the official OpenPrint3D Discord to hang out, ask questions, and come together as a community. The Discord is intended for fun, ease of use, and open discussion among users. https://discord.gg/PDwzze2Bbw
 
 Please Note:
