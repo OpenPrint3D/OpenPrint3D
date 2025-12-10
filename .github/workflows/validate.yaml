@@ -22,27 +22,39 @@ jobs:
       #   run: |
       #     pip install -r requirements.txt
 
-      - name: Get changed files (JSON only)
+       - name: Get changed files (JSON only)
         id: changed
+        shell: bash
         run: |
-          if [ "${{ github.event_name }}" = "pull_request" ]; then
-            files=$(git diff --name-only \
-              ${{ github.event.pull_request.base.sha }} \
-              ${{ github.event.pull_request.head.sha }} \
-              | grep '\.json$' || true)
+          set -e
+
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            # JSON files changed in this PR (base..head)
+            mapfile -t files < <(
+              git diff --name-only \
+                "${{ github.event.pull_request.base.sha }}" \
+                "${{ github.event.pull_request.head.sha }}" \
+                -- '*.json' || true
+            )
           else
-            # Manual run: just grab all tracked JSON
-            files=$(git ls-files '*.json')
+            # Manual run: all tracked JSON files
+            mapfile -t files < <(git ls-files '*.json' || true)
           fi
 
-          echo "files<<EOF" >> "$GITHUB_OUTPUT"
-          echo "$files" >> "$GITHUB_OUTPUT"
-          echo "EOF" >> "$GITHUB_OUTPUT"
+          printf 'files<<EOF\n' >> "$GITHUB_OUTPUT"
+          printf '%s\n' "${files[@]}" >> "$GITHUB_OUTPUT"
+          printf 'EOF\n' >> "$GITHUB_OUTPUT"
+
+          echo "Changed JSON files:"
+          printf '  %s\n' "${files[@]}"
 
       - name: Validate printer schemas
+        shell: bash
         run: |
+          set -e
           files=$(echo "${{ steps.changed.outputs.files }}" | grep '^printer/' || true)
-          if [ -z "$files" ]; then
+
+          if [[ -z "$files" ]]; then
             echo "No printer JSON files changed. Skipping."
             exit 0
           fi
@@ -53,9 +65,12 @@ jobs:
           python tools/validate_schema.py schema/printer.schema.json $files
 
       - name: Validate filament schemas
+        shell: bash
         run: |
+          set -e
           files=$(echo "${{ steps.changed.outputs.files }}" | grep '^filament/' || true)
-          if [ -z "$files" ]; then
+
+          if [[ -z "$files" ]]; then
             echo "No filament JSON files changed. Skipping."
             exit 0
           fi
@@ -66,9 +81,12 @@ jobs:
           python tools/validate_schema.py schema/filament.schema.json $files
 
       - name: Validate process schemas
+        shell: bash
         run: |
+          set -e
           files=$(echo "${{ steps.changed.outputs.files }}" | grep '^process/' || true)
-          if [ -z "$files" ]; then
+
+          if [[ -z "$files" ]]; then
             echo "No process JSON files changed. Skipping."
             exit 0
           fi

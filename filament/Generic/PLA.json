@@ -16,7 +16,7 @@
 
   "color": "black",
   "diameter": 1.75,
-  "density": 0,
+  "density": 1.24,
 
   "nozzle": {
     "min": 0,
