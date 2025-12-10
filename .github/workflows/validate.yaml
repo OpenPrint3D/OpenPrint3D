@@ -105,5 +105,3 @@ jobs:
           echo "$files"
 
           python tools/validate_schema.py schema/process.schema.json $files
-
-          
