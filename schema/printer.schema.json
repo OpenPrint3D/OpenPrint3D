@@ -152,6 +152,10 @@
             "type": "number",
             "description": "Nozzle diameter in mm."
           },
+          "nozzle_material": {
+            "type": "string",
+             "description": "Type of material the nozzle is made of. (optional)"
+          },
           "max_temp": {
             "type": "number",
             "description": "Maximum safe nozzle temperature (°C)."

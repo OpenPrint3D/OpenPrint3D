@@ -42,6 +42,7 @@
     {
       "id": "tool0",
       "nozzle_diameter": 0.4,
+      "nozzle_material": "hardened steel",
       "max_temp": 300,
       "min_temp": 170,
       "retraction_supported": true

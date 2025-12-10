@@ -43,6 +43,7 @@
     {
       "id": "tool0",
       "nozzle_diameter": 0.4,
+      "nozzle_material": "brass",
       "max_temp": 0,
       "min_temp": 0,
       "retraction_supported": true
