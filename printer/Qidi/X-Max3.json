@@ -61,7 +61,7 @@
 
   "network": {
     "has_wifi": true,
-    "has_ethernet": false,
+    "has_ethernet": true,
     "supports_lan_api": true
   },
 
