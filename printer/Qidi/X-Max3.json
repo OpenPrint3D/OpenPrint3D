@@ -7,6 +7,8 @@
   "model": "X-Max3",
   "variant": "Stock",
 
+  "maintainer": "SinglerGold2",
+
   "build_volume": {
     "x": 325,
     "y": 325,
