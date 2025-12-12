@@ -1,0 +1,65 @@
+{
+  "op3d_schema": "filament",
+  "op3d_schema_version": "0.1.0",
+  "id": "voxelpla-pla+",
+
+  "maintainer": {
+    "name": "ethanholz",
+    "maintainer_type": "community",
+    "website": "https://voxelpla.com/pages/preset-and-profiles"
+  },
+
+  "brand": "VOXELPLA",
+  "name": "VOXELPLA+ HS (PRO) 1.75mm",
+  "material": "PLA",
+
+  "color": "black",
+  "diameter": 1.75,
+  "density": 1.23,
+
+  "nozzle": {
+    "min": 200,
+    "max": 220,
+    "recommended": 200
+  },
+
+  "bed": {
+    "min": 60,
+    "max": 60,
+    "recommended": 60
+  },
+
+  "fan": {
+    "min": 50,
+    "max": 100,
+    "recommended": 100
+  },
+
+  "drying": {
+    "temperature": 45,
+    "duration_hours": 4
+  },
+
+  "environment": {
+    "sensitive_to_moisture": true,
+    "enclosure_recommended": false,
+    "max_ambient_temp": 30
+  },
+
+  "external_ids": {},
+  "links": {
+      "technical-data-sheet": "https://cdn.shopify.com/s/files/1/0632/8614/9338/files/PLA_pro_Technical_Data_Sheet.pdf?v=1661454587",
+      "safety-data-sheet": "https://cdn.shopify.com/s/files/1/0632/8614/9338/files/PLA_pro_Safety_Data_Sheet.pdf?v=1661461606"
+  },
+  "tags": [
+    "pla",
+    "voxelpla",
+    "1.75mm"
+  ],
+  "notes": "The VOXELPLA+ HS (PRO) filament profile",
+
+  "x_cura": {},
+  "x_prusaslicer": {},
+  "x_orca": {},
+  "x_bambu": {}
+}
