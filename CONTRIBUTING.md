@@ -33,7 +33,7 @@ tools/             → Validation and development helpers
 ```
 
 ✅ 1. Install Dependencies
-You only need one Python package:
+You only need one Python package (if you don't use [`uv`](https://docs.astral.sh/uv/)):
 ```bash
 pip install jsonschema
 ```
@@ -42,6 +42,11 @@ pip install jsonschema
 Use the provided tool:
 ```bash
 python tools/validate_schema.py schema/<schema-file>.json <your-profile>.json
+```
+
+or if you use `uv`
+```bash
+uv run tools/validate_schema.py schema/<schema-file>.json <your-profile>.json
 ```
 
 ### Examples
