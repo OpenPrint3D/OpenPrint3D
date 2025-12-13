@@ -47,6 +47,8 @@
     "max_ambient_temp": 0
   },
 
+  "volumetric_speed": 10.5,
+
   "external_ids": {},
   "links": {},
   "tags": [],

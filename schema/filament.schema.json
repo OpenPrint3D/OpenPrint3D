@@ -172,6 +172,11 @@
       "additionalProperties": false
     },
 
+    "volumetric_speed": {
+      "type":"number",
+      "description": "Optional volumetric speed limit of the filament."
+    },
+
     "external_ids": {
       "type": "object",
       "description": "Arbitrary external identifiers (OpenPrintTag, GTIN, SKUs, etc.).",
