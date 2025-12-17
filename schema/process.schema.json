@@ -50,9 +50,24 @@
           "type": "string",
           "description": "Contact information of the maintainer. (optional)"
         }
-
       },
       "additionalProperties": false
+    },
+
+    "release":{
+      "type": "object",
+      "required": ["release_version", "release_date"],
+      "properties":{
+        "release_version": {
+          "type": "string",
+          "description": "Version number of release."
+        },
+        "release_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Date of the release."      
+        }
+      }
     },
 
     "name": {

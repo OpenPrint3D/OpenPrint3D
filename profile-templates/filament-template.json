@@ -10,6 +10,11 @@
     "contact": "Contact Information"
   },
 
+  "release":{
+    "release_version": "0.1a",
+    "release_date": "1 January 1970"
+  },
+
   "brand": "Brand",
   "name": "ProductName",
   "material": "PLA",
