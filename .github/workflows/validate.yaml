@@ -12,14 +12,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.x"
-
-      - name: Install Dependencies
-        run: |
-          pip install jsonschema
+      - name: Install the latest version of uv
+        uses: astral-sh/setup-uv@v7
 
       - name: Validate printer schemas
         shell: bash
@@ -41,7 +35,7 @@ jobs:
           echo "Validating printer files:"
           printf '  %s\n' "${files[@]}"
 
-          python tools/validate_schema.py schema/printer.schema.json "${files[@]}"
+          uv run tools/validate_schema.py schema/printer.schema.json "${files[@]}"
 
       - name: Validate filament schemas
         shell: bash
@@ -63,7 +57,7 @@ jobs:
           echo "Validating filament files:"
           printf '  %s\n' "${files[@]}"
 
-          python tools/validate_schema.py schema/filament.schema.json "${files[@]}"
+          uv run tools/validate_schema.py schema/filament.schema.json "${files[@]}"
 
       - name: Validate process schemas
         shell: bash
@@ -85,4 +79,4 @@ jobs:
           echo "Validating process files:"
           printf '  %s\n' "${files[@]}"
 
-          python tools/validate_schema.py schema/process.schema.json "${files[@]}"
+          uv run tools/validate_schema.py schema/process.schema.json "${files[@]}"
