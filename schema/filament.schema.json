@@ -69,6 +69,14 @@
       "description": "Optional human-readable color name."
     },
 
+    "color_variants": {
+      "type": "array",
+        "items": {
+          "type": "string",
+          "description": "Optional array of additional colors this filament is available in."
+        }
+    },
+
     "diameter": {
       "type": "number",
       "description": "Nominal filament diameter in mm, e.g. 1.75."

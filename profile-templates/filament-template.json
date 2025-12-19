@@ -15,6 +15,8 @@
   "material": "PLA",
 
   "color": "",
+  "color_variants": ["Black", "White", "Gray"],
+
   "diameter": 1.75,
   "density": 0,
 
